@@ -35,6 +35,10 @@ public class WidgetManager {
         return instance;
     } // end of getInstance()
 
+    public int getWidgetListSize() {
+        return widgets.size();
+    }
+
     /**
      * Add a widget to the list
      * */

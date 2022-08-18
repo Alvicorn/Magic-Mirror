@@ -18,7 +18,7 @@ public class Widget {
     private Component component;
     private String widgetName;
 
-    private Dimension size;
+    private Rectangle frameBounds;
     private Point lastPosition;
 
     private int index;
@@ -26,11 +26,11 @@ public class Widget {
     /**
      * Parameterized constructor
      * */
-    public Widget(Component component, String widgetName) {
+    public Widget(Component component, String widgetName, Rectangle frameBounds) {
         this.component = component;
         this.widgetName = widgetName;
-        this.size = component.getSize();
-        this.lastPosition = component.getLocation();
+        this.frameBounds = frameBounds;
+//        this.lastPosition = component.getLocation();
         this.index = NOT_IN_LIST;
     } // end of Widget()
 
@@ -43,12 +43,8 @@ public class Widget {
         return widgetName;
     }
 
-    public Dimension getSize() {
-        return size;
-    }
-
-    public Point getLastPosition() {
-        return lastPosition;
+    public Rectangle getFrameBounds() {
+        return frameBounds;
     }
 
     public int getIndex() {
