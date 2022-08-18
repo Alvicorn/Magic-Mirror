@@ -12,25 +12,43 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 
-public class HomeGUI {
+public class HomeGUI extends JFrame {
 
-    private JFrame homeFrame;
+    DesktopPane desktopPane;
+    Container contentPane;
 
     public HomeGUI() {
-        setHomeFrame();
-
-
-    } // end of HomeGUI()
-
-
-    private void setHomeFrame() {
-        homeFrame = new JFrame();
-        Dimension maxDimension = Toolkit.getDefaultToolkit().getScreenSize();
-        homeFrame.setSize(maxDimension);
-        homeFrame.setResizable(false);
-        homeFrame.getContentPane().setBackground(Color.BLACK);
-        homeFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        homeFrame.setVisible(true);
+        setFrame();
+        setDesktopPane();
     }
 
+
+
+    /**
+     * Set the desktop view and its internal components
+     * */
+    private void setDesktopPane() {
+        desktopPane = new DesktopPane();
+        contentPane = getContentPane();
+        contentPane.add(desktopPane, BorderLayout.CENTER);
+        desktopPane.display(desktopPane);
+        desktopPane.setBackground(Color.BLACK);
+    }
+
+    /**
+     * Set the initial JFrame
+     * */
+    private void setFrame() {
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        Dimension maxDimension = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setSize(maxDimension);
+        this.setResizable(false);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    } // end of setFrame()
+
+
 } // end of HomeGUI.java
+
+
+
