@@ -18,10 +18,11 @@ Tools/widgets will include:
 Magic Mirror will be developed predominantly using OpenJDK 18 in Intellij IDE. The UI will be constructed
 with Java Swing and the AWT (Abstract Window Toolkit) package. This project will follow the MVC
 (Model, View, Control) design pattern. For locally saved data, a local webserver will be created using 
-Spring Boot. 
+Spring Boot. All files will be uploaded to a [GitHub repository](https://github.com/Alvicorn/Magic-Mirror.git).
 
 
-## Part 3: System Architecture Diagrams
+## Part 3: System Architecture Diagram
 Holistic System Diagram: The following diagram shows a high-level view of the software
 
-![Overall System Architecture Diagram](../resources/OverallSystemArchitecture/OverallSystemArchitectureDesignDiagram.jpg)
+![Overall System Architecture Diagram](../res/OverallSystemArchitecture/OverallSystemArchitectureDesignDiagram.jpg)
+
