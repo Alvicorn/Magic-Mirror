@@ -1,5 +1,7 @@
 import view.HomeGUI;
 
+import javax.swing.*;
+
 /**
  * MagicMirror.java
  *
@@ -13,6 +15,8 @@ import view.HomeGUI;
 public class MagicMirror {
 
     public static void main(String[] args) {
+//        SwingUtilities.invokeLater((Runnable) new HomeGUI());
+
         HomeGUI main = new HomeGUI();
     } // end of main()
 } // end of MagicMirror.java

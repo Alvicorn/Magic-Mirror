@@ -44,21 +44,20 @@ public class DesktopPane extends JDesktopPane {
 
     private void addWidgetsForTesting() {
         // panel 1
-        JPanel panel1 = new JPanel(new FlowLayout());
-        panel1.setBackground(Color.BLACK);
-        JLabel clock = new JLabel("Clock", JLabel.CENTER);
-        clock.setForeground(Color.WHITE);
-        clock.setFont(new Font("Arial Black", Font.BOLD, 25));
-        panel1.add(clock);
-        ClockTread ct = new ClockTread(clock);
-        Widget widget1 = new Widget(panel1, "panel 1",
-                new Rectangle(30, 30, 250, 85));
+        JPanel clockPanel = new JPanel();
+        clockPanel.setLayout(new BoxLayout(clockPanel, BoxLayout.Y_AXIS));
+        clockPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        clockPanel.setBackground(Color.BLACK);
+
+        ClockTread ct = new ClockTread(clockPanel);
+        Widget widget1 = new Widget(clockPanel, "Clock panel",
+                new Rectangle(30, 30, 500, 100));
 
         // panel 2
         JPanel panel2 = new JPanel();
         panel2.setBackground(Color.YELLOW);
         Widget widget2 = new Widget(panel2, "panel 2",
-                new Rectangle(30, 110, 250, 85));
+                new Rectangle(30, 150, 250, 85));
 
         widgetManager.addWidget(widget1);
         widgetManager.addWidget(widget2);
