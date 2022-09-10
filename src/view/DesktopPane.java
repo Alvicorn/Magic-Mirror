@@ -32,7 +32,7 @@ public class DesktopPane extends JDesktopPane {
 
         for(int i = 0; i < widgetManager.getWidgetListSize(); i++) {
             JInternalFrame frame = new JInternalFrame("",  true,
-                    true, true, true);
+                    true, false, false);
 
             frame.setBounds(widgetManager.getWidget(i).getFrameBounds());
             Container container = frame.getContentPane();
@@ -43,15 +43,7 @@ public class DesktopPane extends JDesktopPane {
     }
 
     private void addWidgetsForTesting() {
-        // panel 1
-        JPanel clockPanel = new JPanel();
-        clockPanel.setLayout(new BoxLayout(clockPanel, BoxLayout.Y_AXIS));
-        clockPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        clockPanel.setBackground(Color.BLACK);
-
-        ClockTread ct = new ClockTread(clockPanel);
-        Widget widget1 = new Widget(clockPanel, "Clock panel",
-                new Rectangle(30, 30, 500, 100));
+        createClock();
 
         // panel 2
         JPanel panel2 = new JPanel();
@@ -59,9 +51,30 @@ public class DesktopPane extends JDesktopPane {
         Widget widget2 = new Widget(panel2, "panel 2",
                 new Rectangle(30, 150, 250, 85));
 
-        widgetManager.addWidget(widget1);
+
         widgetManager.addWidget(widget2);
     }
 
-}
+
+    private void createClock() {
+        JPanel clockPanel = new JPanel();
+
+        // set panel properties
+        clockPanel.setLayout(new BoxLayout(clockPanel, BoxLayout.Y_AXIS));
+        clockPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        clockPanel.setBackground(Color.BLACK);
+
+        // attach the clock thread to the panel
+        ClockTread ct = new ClockTread(clockPanel);
+
+        // place the clock onto the desktop
+        Widget clockWidget = new Widget(clockPanel, "Clock panel",
+                new Rectangle(30, 30, 500, 100));
+        widgetManager.addWidget(clockWidget);
+
+    }
+
+
+
+} // end of DesktopPane.java
 

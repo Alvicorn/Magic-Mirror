@@ -14,9 +14,11 @@ import java.awt.*;
 
 public class Widget {
 
-    public static final int NOT_IN_LIST = -1;
+    public static final int NOT_MANAGED = -1;
+
     private Component component;
     private String widgetName;
+
 
     private Rectangle frameBounds;
     private Point lastPosition;
@@ -31,7 +33,7 @@ public class Widget {
         this.widgetName = widgetName;
         this.frameBounds = frameBounds;
 //        this.lastPosition = component.getLocation();
-        this.index = NOT_IN_LIST;
+        this.index = NOT_MANAGED;
     } // end of Widget()
 
 
@@ -57,7 +59,8 @@ public class Widget {
     }
 
     public boolean inWidgetList() {
-        return index > NOT_IN_LIST;
+        return index > NOT_MANAGED;
     }
+
 
 } // end of Widget.java

@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDateTime;
 
-public class ClockTread implements Runnable{
+public class ClockTread implements Runnable {
     private Thread thread;
 
     // for the GUI
@@ -42,7 +42,7 @@ public class ClockTread implements Runnable{
         this.date = new JLabel("date", JLabel.CENTER);
         this.date.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         this.date.setForeground(Color.WHITE);
-        this.date.setFont(new Font("Arial Black", Font.BOLD, 25));
+        this.date.setFont(new Font("Arial Black", Font.BOLD, 15));
     } // end of setUpGUI()
 
 

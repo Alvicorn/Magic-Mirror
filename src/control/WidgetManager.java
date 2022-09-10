@@ -12,7 +12,6 @@ package control;
 
 import model.Widget;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class WidgetManager {
@@ -46,7 +45,7 @@ public class WidgetManager {
 
         boolean valid = false;
         // check if the title already exists in the list
-        if (widget.getIndex() == Widget.NOT_IN_LIST) {
+        if (widget.getIndex() == Widget.NOT_MANAGED) {
             valid = true;
             widgets.add(widget);
             widget.setIndex(widgets.size() - 1);
@@ -60,7 +59,7 @@ public class WidgetManager {
      * */
     public boolean removeWidget(Widget widget) {
         boolean found = false;
-        if (widget.getIndex() != Widget.NOT_IN_LIST) {
+        if (widget.getIndex() != Widget.NOT_MANAGED) {
             found = true;
             widgets.remove(widget.getIndex());
         }
@@ -70,7 +69,7 @@ public class WidgetManager {
     public boolean modifyWidget(Widget widget) {
         boolean found = false;
 
-        if (widget.getIndex() != Widget.NOT_IN_LIST) {
+        if (widget.getIndex() != Widget.NOT_MANAGED) {
             found = true;
             widgets.set(widget.getIndex(), widget);
         }
@@ -78,7 +77,7 @@ public class WidgetManager {
     } // end of modifyWidget
 
     public Widget getWidget(int index) {
-        if (index != Widget.NOT_IN_LIST &&
+        if (index != Widget.NOT_MANAGED &&
             index < widgets.size()) {
             return widgets.get(index);
         } else {
